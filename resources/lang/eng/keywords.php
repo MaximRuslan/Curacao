@@ -9,6 +9,20 @@ return [
 
     "Buy Miles" => "Buy Miles",
     "My Bundles" => "My Bundles",    
+    "Purchase Type" => "Purchase Type",
+    "Total Bundles" => "Total Bundles",
+    "Max Bundle Purchase Allowed" => "Max Bundle Purchase Allowed",
+    "Purchase fee" => "Purchase fee",
+    "Tax Purchase fee" => "Tax Purchase fee",
+    "Total miles purchased" => "Total miles purchased",
+
+    "My Miles" => "My Miles", 
+    "Purchase ID" => "Purchase ID", 
+    "Price Amount" => "Price Amount", 
+    "Purchase Type" => "Purchase Type", 
+    "Purchase Date" => "Purchase Date",
+    "Miles" => "Miles",
+
 
 
     "Available for loan" => "Available For Loan",

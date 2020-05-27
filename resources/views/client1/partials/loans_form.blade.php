@@ -63,28 +63,28 @@
             <div class="loan-errors alert alert-danger" style="display: none">
                 <ul class="list-group"></ul>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-10">
                     <div class="form-group">
                         <label class="control-label">@lang('keywords.Loan reason') *</label>
                         {!! Form::select('loan_reason',$reasons,'',['class'=>'form-control','id'=>'loan_reason','placeholder'=> __('keywords.Loan reason') ]) !!}
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-md-10">
                     <div class="form-group">
-                        <label class="control-label">@lang('keywords.Loan type') *</label>
-                        {!! Form::select('loan_type',$types,'',['class'=>'form-control','id'=>'loan_type','placeholder'=>__('keywords.Loan type')]) !!}
+                        <label class="control-label">@lang('keywords.Purchase Type') *</label>
+                        {!! Form::select('loan_type',$types,'',['class'=>'form-control','id'=>'loan_type','placeholder'=>__('keywords.Purchase Type')]) !!}
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-10">
                     <div class="form-group">
-                        <label class="control-label">@lang('keywords.Requested Amount') *</label>
+                        <label class="control-label">@lang('keywords.Total Bundles') *</label>
                         <select name="amount" class="form-control" id="amount"
-                                placeholder="{!! __('keywords.Requested Amount') !!}">
+                                placeholder="{!! __('keywords.Total Bundles') !!}">
                         </select>
                     </div>
                 </div>
@@ -93,10 +93,10 @@
                 <div class="col-md-10">
                     <div class="form-group">
                         <label class="control-label">
-                            @lang('keywords.Suggested Loan Amount')
+                            @lang('keywords.Max Bundle Purchase Allowed')
                         </label>
                         <input name="max_loan_amount" id="max_loan_amount" id="max_loan_amount" type="text" readonly=""
-                               class="form-control" placeholder="{!! __('keywords.Suggested Loan Amount') !!}">
+                               class="form-control" placeholder="{!! __('keywords.Max Bundle Purchase Allowed') !!}">
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                     <tr>
                         <td width="65%">
 
-                            @lang('keywords.Origination Fee')
+                            @lang('keywords.Purchase fee')
                             <span id="origination_fee_percentage"></span>
                         </td>
                         <td width="35%" id="origination_fee_amount"></td>
@@ -125,14 +125,14 @@
                     @if(isset($country))
                         <tr>
                             <td width="65%">
-                                @lang('keywords.Tax On Origination Fee') ({!! $country->tax_percentage !!} %)
+                                @lang('keywords.Tax Purchase fee') ({!! $country->tax_percentage !!} %)
                             </td>
                             <td width="35%" id="territory_tax"></td>
                         </tr>
                     @else
                         <tr>
                             <td width="65%">
-                                @lang('keywords.Tax On Origination Fee')
+                                @lang('keywords.Tax Purchase fee')
                                 (<span id="territory_tax_percentage"></span> %)
                             </td>
                             <td width="35%" id="territory_tax"></td>
@@ -151,7 +151,7 @@
                         <td width="35%" id="tax_interest"></td>
                     </tr>
                     <tr>
-                        <td width="65%">@lang('keywords.Credit Amount')</td>
+                        <td width="65%">@lang('keywords.Total miles purchased')</td>
                         <td width="35%" id="credit_amount"></td>
                     </tr>
                 </table>

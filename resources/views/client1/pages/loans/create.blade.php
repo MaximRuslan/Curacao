@@ -16,7 +16,7 @@
         <div class="froggy-listing__header"
              style="background-image: url({!! asset('resources/img/client/froggy-cover.jpg') !!});">
             <div class="container">
-                <h3>@lang('keywords.Apply for loan')</h3>
+                <h3>@lang('keywords.Buy Miles')</h3>
             </div>
         </div>
         <div class="froggy-listing__content">

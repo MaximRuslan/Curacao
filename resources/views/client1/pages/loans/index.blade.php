@@ -18,11 +18,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <h3>@lang('keywords.My Loans')</h3>
+                        <h3>@lang('keywords.My Miles')</h3>
                     </div>
                     <div class="col-md-4 text-right">
                         <a href="#nogo" class="btn btn-primary js--has-active-loan">
-                            @lang('keywords.Apply for loan')
+                            @lang('keywords.Buy Miles')
                         </a>
                     </div>
                 </div>
@@ -34,14 +34,14 @@
                     <table id="datatable" width="100%">
                         <thead>
                         <tr>
-                            <th>@lang('keywords.Loan ID')</th>
-                            <th style="width: 10%;">@lang('keywords.Loan reason')</th>
+                            <th>@lang('keywords.Purchase ID')</th>
+                           <!--  <th style="width: 10%;">@lang('keywords.Loan reason')</th>
                             <th>@lang('keywords.Loan reason')</th>
-                            <th>@lang('keywords.Loan reason')</th>
-                            <th style="width: 10%;">@lang('keywords.Amount')</th>
-                            <th style="width: 10%;">@lang('keywords.Loan type')</th>
-                            <th>@lang('keywords.Loan type')</th>
-                            <th>@lang('keywords.Loan type')</th>
+                            <th>@lang('keywords.Loan reason')</th> -->
+                            <th style="width: 10%;">@lang('keywords.Price Amount')</th>
+                            <th style="width: 10%;">@lang('keywords.Purchase Type')</th>
+                            <th>@lang('keywords.Purchase Type')</th>
+                            <th>@lang('keywords.Purchase Type')</th>
                             <th style="width: 10%;">@lang('keywords.Status')</th>
                             <th>@lang('keywords.Status')</th>
                             <th>@lang('keywords.Status')</th>
@@ -52,7 +52,7 @@
                             <th>@lang('keywords.Decline reason')</th>
                             <th>@lang('keywords.Decline reason')</th>
                             <th style="width: 10%;">@lang('keywords.Requested Date')</th>
-                            <th style="width: 10%;">@lang('keywords.Start Date')</th>
+                            <th style="width: 10%;">@lang('keywords.Purchase Date')</th>
                             <th style="width: 10%;">@lang('keywords.Completed Date')</th>
                             <th style="width: 20%;">@lang('keywords.Action')</th>
                         </tr>

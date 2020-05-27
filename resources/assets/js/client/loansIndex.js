@@ -24,9 +24,9 @@ var loansIndex = {
             },
             columns: [
                 {data: 'id', name: 'loan_applications.id'},
-                {data: 'reason', name: 'loan_reasons.title'},
-                {data: 'reason', name: 'loan_reasons.title_es', visible: false},
-                {data: 'reason', name: 'loan_reasons.title_nl', visible: false},
+                // {data: 'reason', name: 'loan_reasons.title'},
+                // {data: 'reason', name: 'loan_reasons.title_es', visible: false},
+                // {data: 'reason', name: 'loan_reasons.title_nl', visible: false},
                 {data: 'amount', name: 'loan_applications.amount'},
                 {data: 'type', name: 'loan_types.title'},
                 {data: 'type', name: 'loan_types.title_es', visible: false},

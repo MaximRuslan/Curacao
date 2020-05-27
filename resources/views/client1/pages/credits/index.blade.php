@@ -70,7 +70,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th style="width: 10%;">@lang('keywords.PaymentType')</th>
-                                <th style="width: 10%;">@lang('keywords.Amount')</th>
+                                <th style="width: 10%;">@lang('keywords.Miles')</th>
                                 <th>@lang('keywords.Bank')</th>
                                 <th>@lang('keywords.Bank')</th>
                                 <th>@lang('keywords.Bank')</th>
