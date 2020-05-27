@@ -1,0 +1,90 @@
+<?php
+
+return [
+    "active_loan" => "Bo tin un fiansa habri kaba.",
+    "accepted" => "E atributo: mester ta aseptá.",
+    "active_url" => "E atributo: no ta un URL bálido.",
+    "after" => "E atributo: mester ta un fecha despues di: fecha.",
+    "after_or_equal" => "E atributo: mester ta un fecha despues o igual na: e fecha.",
+    "alpha" => "E atributo: por kontené lèter so.",
+    "alpha_dash" => "E atributo: por kontené lèter, number i guion so.",
+    "alpha_num" => "E atributo: por kontené lèter i number so.",
+    "array" => "E atributo: mester ta un matris.",
+    "before" => "E atributo: mester ta un fecha promé ku: fecha.",
+    "before_or_equal" => "E atributo: mester ta un fecha promé ku o igual na: e fecha.",
+    "between" => [
+        "array" => "E atributo: mester tin: elemento mín. i: máks.",
+        "file" => "E atributo: mester ta entre: mínimo i: máksimo di kilobytes.",
+        "numeric" => "E atributo: mester ta entre: mín. i: máks.",
+        "string" => "E atributo: mester ta entre: mín. i: máx. lèter"
+    ],
+    "boolean" => "E kampo atributo: mester ta sea bèrdat òf no bèrdat.",
+    "confirmed" => "Konfirmashon di e atributo: no ta klòp.",
+    "custom" => [
+        "attribute-name" => [
+            "rule-name" => "mensahe personalisá"
+        ]
+    ],
+    "date" => "E atributo: no ta un fecha bálido.",
+    "date_format" => "E atributo: no ta klòp ku e formato: formato.",
+    "different" => "E atributo i: otro mester ta diferente.",
+    "digits" => "E atributo: mester ta: dígito dígito.",
+    "digits_between" => "E atributo: mester ta entre: mínimo i: máksimo di dígito.",
+    "dimensions" => "E atributo: tin dimenshonnan di imágen no bálido.",
+    "distinct" => "E kampo atributo: tin un balor dupliká.",
+    "email" => "E atributo: mester ta un direkshon di koreo elektróniko bálido.",
+    "exists" => "E atributo selekshoná: no ta bálido.",
+    "file" => "E atributo: mester ta un archivo.",
+    "filled" => "E kampo atributo mester tin un balor.",
+    "image" => "E atributo: mester ta un imágen.",
+    "in" => "E atributo selekshoná: no ta bálido.",
+    "in_array" => "E kampo atributo: no ta eksistí den: otro.",
+    "integer" => "E atributo: mester ta un number hinté.",
+    "ip" => "E atributo: mester ta un direkshon di IP bálido.",
+    "ipv4" => "E atributo: mester ta un direkshon di IPv4 bálido.",
+    "ipv6" => "E atributo: mester ta un direkshon di IPv6 bálido.",
+    "json" => "E atributo: mester ta un kadena di JSON bálido.",
+    "max" => [
+        "array" => "E atributo: no por tin mas ku: e máksimo kantidat di elemento.",
+        "file" => "E atributo: no por ta mas grandi ku: máks. kilobytes.",
+        "numeric" => "E atributo: no por ta mas ku: máks.",
+        "string" => "E atributo: no por tin mas ku: e máks. di lèter."
+    ],
+    "mimes" => "E atributo: mester ta un archivo de tipo: balor.",
+    "mimetypes" => "E atributo: mester ta un archivo de tipo: balor.",
+    "min" => [
+        "array" => "E atributo: mester tin al ménos: elementonan mínimo",
+        "file" => "E atributo: mester ta al menos: mínimo di kilobyte.",
+        "numeric" => "E atributo: mester ta al menos: mínimo di elemento.",
+        "custom" => "E \"atributo\" no por ta mas grandi ku: \"mín\".",
+        "string" => "E atributo: mester tin al ménos: mín. Lèter."
+    ],
+    "not_in" => "E atributo selekshoná: no ta bálido.",
+    "numeric" => "E atributo: mester ta un number.",
+    "present" => "E kampo atributo mester t'ei.",
+    "regex" => "E formato atributo: no ta bálido.",
+    "required" => "E kampo atributo: ta obligatorio.",
+    "this_required" => "E kampo akí ta rekerí.",
+    "should_numeric" => "E kampo akí mester ta numériko.",
+    "already_taken" => "E balornan akí ta tumá kaba.",
+    "should_email" => "E kampo akí mester ta den e formato di koreo elektróniko adekuado.",
+    "required_if" => "E kampo atributo ta obligatorio si: otro ta: balor.",
+    "required_unless" => "E kampo atributo ta obligatorio a ménos ku: otro ta den: balornan.",
+    "required_with" => "E kampo atributo ta obligatorio si: e balornan t'ei.",
+    "required_with_all" => "E kampo atributo ta obligatorio si: e balornan t'ei.",
+    "required_without" => "E kampo atributo ta obligatorio si: e balornan no t'ei..",
+    "required_without_all" => "E kampo atributo ta obligatorio si niun di: e balornan no t'ei.",
+    "same" => "E atributo i: otro mester klòp.",
+    "size" => [
+        "array" => "E atributo: mestrer kontené: elementonan di tamaño.",
+        "file" => "E atributo: mester ta: kilobytes di tamaño.",
+        "numeric" => "E atributo: mester ta: tamaño.",
+        "string" => "E atributo: mester ta: lèter di tamaño."
+    ],
+    "string" => "E atributo: mester ta un kadena.",
+    "timezone" => "E atributo: mester ta un zona bálido.",
+    "unique" => "E atributo: ya ta tumá.",
+    "uploaded" => "E atributo: no a logra karg'é.",
+    "url" => "E formato atributo: no ta bálido.",
+    "valid_input" => "Por fabor, introdusí un entrada bálido pa: nòmber."
+];

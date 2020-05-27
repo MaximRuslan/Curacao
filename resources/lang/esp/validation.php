@@ -1,0 +1,90 @@
+<?php
+
+return [
+    "active_loan" => "ya tienes un prestamo activo.",
+    "accepted" => "El atributo: debe ser aceptado.",
+    "active_url" => "El atributo: no es un URL válida.",
+    "after" => "El atributo: debe ser una fecha después de: fecha.",
+    "after_or_equal" => "El atributo: debe ser una fecha posterior o igual a: la fecha.",
+    "alpha" => "El atributo: solo puede contener letras.",
+    "alpha_dash" => "El atributo: solo puede contener letras, números y guiones.",
+    "alpha_num" => "El atributo: solo puede contener letras y números.",
+    "array" => "El atributo: debe ser una matriz.",
+    "before" => "El atributo: debe ser una fecha anterior a: fecha.",
+    "before_or_equal" => "El atributo: debe ser una fecha anterior o igual a: la fecha.",
+    "between" => [
+        "array" => "El atributo: debe tener entre: mín. y: máx. elementos",
+        "file" => "El atributo: debe estar entre: mínimo y: máximo de kilobytes.",
+        "numeric" => "El atributo: debe estar entre: mín. y: máx.",
+        "string" => "El atributo: debe estar entre: mín. y: máx. caracteres."
+    ],
+    "boolean" => "El campo atributo: debe ser verdadero o falso.",
+    "confirmed" => "La confirmación del atributo: no coincide.",
+    "custom" => [
+        "attribute-name" => [
+            "rule-name" => "mensaje personalizado"
+        ]
+    ],
+    "date" => "El atributo: no es una fecha válida.",
+    "date_format" => "El atributo: no coincide con el formato: formato.",
+    "different" => "El atributo y: otro deben ser diferentes.",
+    "digits" => "El atributo: debe ser: dígitos dígitos.",
+    "digits_between" => "El atributo: debe estar entre: mínimo y: máximo de dígitos.",
+    "dimensions" => "El atributo: tiene dimensiones de imagen no válidas.",
+    "distinct" => "El campo atributo: tiene un valor duplicado.",
+    "email" => "El atributo: debe ser una dirección de correo electrónico válida.",
+    "exists" => "El atributo seleccionado: no es válido.",
+    "file" => "El atributo: debe ser un archivo.",
+    "filled" => "El campo atributo debe tener un valor.",
+    "image" => "El atributo: debe ser una imagen.",
+    "in" => "El atributo seleccionado: no es válido.",
+    "in_array" => "El campo atributo: no existe en: otro.",
+    "integer" => "El atributo: debe ser un número entero.",
+    "ip" => "El atributo: debe ser una dirección IP válida.",
+    "ipv4" => "El atributo: debe ser una dirección IPv4 válida.",
+    "ipv6" => "El atributo: debe ser una dirección IPv6 válida.",
+    "json" => "El atributo: debe ser una cadena JSON válida.",
+    "max" => [
+        "array" => "El atributo: no puede tener más que: la máxima cantidad de elementos.",
+        "file" => "El atributo: no puede ser mayor que: máx. kilobytes.",
+        "numeric" => "El atributo: no puede ser mayor que: máx.",
+        "string" => "El atributo: no puede ser mayor que: el máx. de caracteres."
+    ],
+    "mimes" => "El atributo: debe ser un archivo de tipo: valores.",
+    "mimetypes" => "El atributo: debe ser un archivo de tipo: valores.",
+    "min" => [
+        "array" => "El atributo: debe tener al menos: elementos mín.",
+        "file" => "El atributo: debe ser al menos: kilobytes mínimos.",
+        "numeric" => "El atributo: debe ser al menos: elementos mín.",
+        "custom" => "El \"atributo\" no puede ser mayor que : \"mín\".",
+        "string" => "El atributo: debe tener al menos: mín. caracteres."
+    ],
+    "not_in" => "El atributo seleccionado: no es válido.",
+    "numeric" => "El atributo: debe ser un número.",
+    "present" => "El campo atributo debe estar presente.",
+    "regex" => "El formato atributo: no es válido.",
+    "required" => "El campo atributo: es obligatorio.",
+    "this_required" => "Este campo es requerido.",
+    "should_numeric" => "Este campo debe ser numérico.",
+    "already_taken" => "Estos valores ya han sido tomados.",
+    "should_email" => "Este campo debe estar en el formato de correo electrónico adecuado.",
+    "required_if" => "El campo atributo es obligatorio cuando: otro esté en: valor.",
+    "required_unless" => "El campo atributo es obligatorio a menos que: otro esté en: valores.",
+    "required_with" => "El campo atributo es obligatorio cuando: los valores están presentes.",
+    "required_with_all" => "El campo atributo es obligatorio cuando: los valores están presentes.",
+    "required_without" => "El campo atributo es obligatorio cuando: los valores no están presentes.",
+    "required_without_all" => "El campo atributo es obligatorio cuando ninguno de: los valores están presentes.",
+    "same" => "El atributo y: otro deben coincidir.",
+    "size" => [
+        "array" => "El atributo: debe contener: elementos de tamaño.",
+        "file" => "El atributo: debe ser: kilobytes de tamaño.",
+        "numeric" => "El atributo: debe ser: tamaño.",
+        "string" => "El atributo: debe ser: caracteres de tamaño."
+    ],
+    "string" => "El atributo: debe ser una cadena.",
+    "timezone" => "El atributo: debe ser una zona válida.",
+    "unique" => "El atributo: ya ha sido tomado.",
+    "uploaded" => "El atributo: no se pudo cargar.",
+    "url" => "El formato atributo: no es válido.",
+    "valid_input" => "Por favor, introduzca una entrada válida para: nombre."
+];

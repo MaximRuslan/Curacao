@@ -1,0 +1,1129 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Hyla Wallet Apis",
+        "version": "1.0"
+    },
+    "host": "hylawallet.com",
+    "basePath": "/api/v1",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/client/credits": {
+            "get": {
+                "tags": [
+                    "credits"
+                ],
+                "summary": "Credits listing api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page id to pass",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"credits\": \"credits objects.\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "credits"
+                ],
+                "summary": "Apply for new credit request api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "payment_type",
+                        "in": "query",
+                        "description": "\"1\"=>\"cash payout request\",\"2\"=>\"bank request\"",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "amount of credit request",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "bank_id",
+                        "in": "query",
+                        "description": "bank is selection from drop down",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "transaction_charge",
+                        "in": "query",
+                        "description": "transaction charge on the bases of bank selection transaction fee amount+tax_transaction",
+                        "type": "number"
+                    },
+                    {
+                        "name": "branch_id",
+                        "in": "query",
+                        "description": "branch selection from drop down in case of cash payout request",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "notes",
+                        "in": "query",
+                        "description": "notes for request",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "terms_accepted",
+                        "in": "query",
+                        "description": "1 if client accepted terms other wise 0",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\": \"Credit request submitted successfully.\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/credits/create": {
+            "get": {
+                "tags": [
+                    "credits"
+                ],
+                "summary": "Create needed dropdown api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"wallet\": \"User Wallet amount.\",\"available_balance\":\"available amount\",\"terms\":\"user country terms language wise\",\"branches\":\"branches dropdown\",\"map_link\":\"country map link\",\"message\":\"\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/credits/{credit_id}": {
+            "put": {
+                "tags": [
+                    "credits"
+                ],
+                "summary": "updating data related for data",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "parameter": "id_in_path",
+                        "name": "credit_id",
+                        "in": "path",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "payment_type",
+                        "in": "query",
+                        "description": "\"1\"=>\"cash payout request\",\"2\"=>\"bank request\"",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "amount of credit request",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "bank_id",
+                        "in": "query",
+                        "description": "bank is selection from drop down",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "transaction_charge",
+                        "in": "query",
+                        "description": "transaction charge on the bases of bank selection transaction fee amount+tax_transaction",
+                        "type": "number"
+                    },
+                    {
+                        "name": "branch_id",
+                        "in": "query",
+                        "description": "branch selection from drop down in case of cash payout request",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "notes",
+                        "in": "query",
+                        "description": "notes for request",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "terms_accepted",
+                        "in": "query",
+                        "description": "1 if client accepted terms other wise 0",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\": \"Credit request updated successfully.\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "credits"
+                ],
+                "summary": "Credit request delete api only if credit is in status requested",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "parameter": "id_in_path",
+                        "name": "credit_id",
+                        "in": "path",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\":\"Loan Application successfully deleted.\"}}}"
+                    },
+                    "401": {
+                        "description": "{\"data\":{{\"message\":\"Loan Application not found.\"}}},{\"data\":{{\"message\":\"Something went wrong.\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/loan-contract/{loantype_id}": {
+            "get": {
+                "tags": [
+                    "loans"
+                ],
+                "summary": "loan contract page",
+                "parameters": [
+                    {
+                        "name": "loantype_id",
+                        "in": "query",
+                        "description": "loantype id to pass",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "query",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "client id",
+                        "type": "string"
+                    },
+                    {
+                        "name": "loan_amount",
+                        "in": "query",
+                        "description": "loans amount",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"loan_applications\": \"Loans objects.\",\"message\":\"\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/loan-applications": {
+            "get": {
+                "tags": [
+                    "loans"
+                ],
+                "summary": "Loans listing api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page id to pass",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"loan_applications\": \"Loans objects.\",\"message\":\"\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "loans"
+                ],
+                "summary": "Apply for new loan store related api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "name": "loan_reason",
+                        "in": "query",
+                        "description": "loan reason selection",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "loan_type",
+                        "in": "query",
+                        "description": "loan type selection",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "amount selection make from getting loan type",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "income_type[0]",
+                        "in": "query",
+                        "description": "first income object income_type in:1,2 q for main income 2 for other",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "income_amount[0]",
+                        "in": "query",
+                        "description": "first income object income amount",
+                        "type": "number"
+                    },
+                    {
+                        "name": "date_of_payment[0]",
+                        "in": "query",
+                        "description": "date of income payment format should be Y-m-d",
+                        "type": "string"
+                    },
+                    {
+                        "name": "income_proof_image[0]",
+                        "in": "formData",
+                        "description": "first income object proof file png,gif,jpg,jpeg,doc,docx,pdf",
+                        "type": "file"
+                    },
+                    {
+                        "name": "income_type[1]",
+                        "in": "query",
+                        "description": "second income object income_type in:1,2 q for main income 2 for other",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "income_amount[1]",
+                        "in": "query",
+                        "description": "second income object income amount",
+                        "type": "number"
+                    },
+                    {
+                        "name": "income_proof_image[1]",
+                        "in": "formData",
+                        "description": "second income object proof file png,gif,jpg,jpeg,doc,docx,pdf",
+                        "type": "file"
+                    },
+                    {
+                        "name": "expense_type[0]",
+                        "in": "query",
+                        "description": "expence type selection",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "other_amount[0]",
+                        "in": "query",
+                        "description": "expence amount",
+                        "type": "number"
+                    },
+                    {
+                        "name": "signature",
+                        "in": "formData",
+                        "description": "signature file png,gif,jpg,jpeg",
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"country\": \"User country object.\",\"reasons\": \"Loans reasons objects.\",\"other_loan_types\": \"Existing loan types objects.\",\"types\": \"Loan types objects.\",\"message\":\"\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/loan-applications/create": {
+            "get": {
+                "tags": [
+                    "loans"
+                ],
+                "summary": "applying for new loan related data",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"country\": \"User country object.\",\"reasons\": \"Loans reasons objects.\",\"other_loan_types\": \"Existing loan types objects.\",\"types\": \"Loan types objects.\",\"message\":\"\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/loan-applications/{loan_application_id}": {
+            "get": {
+                "tags": [
+                    "loans"
+                ],
+                "summary": "loan application data showing api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "parameter": "id_in_path",
+                        "name": "loan_application_id",
+                        "in": "path",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"loan_application\": \"loan application related data.\",\"message\":\"\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "loans"
+                ],
+                "summary": "updating data related for data",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "parameter": "id_in_path",
+                        "name": "loan_application_id",
+                        "in": "path",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "loan_reason",
+                        "in": "query",
+                        "description": "loan reason selection",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "loan_type",
+                        "in": "query",
+                        "description": "loan type selection",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "amount selection make from getting loan type",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "income_id[0]",
+                        "in": "query",
+                        "description": "first income object id for update",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "income_type[0]",
+                        "in": "query",
+                        "description": "first income object income_type in:1,2 q for main income 2 for other",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "income_amount[0]",
+                        "in": "query",
+                        "description": "first income object income amount",
+                        "type": "number"
+                    },
+                    {
+                        "name": "date_of_payment[0]",
+                        "in": "query",
+                        "description": "date of income payment format should be Y-m-d",
+                        "type": "string"
+                    },
+                    {
+                        "name": "income_proof_image[0]",
+                        "in": "formData",
+                        "description": "first income object proof file png,gif,jpg,jpeg,doc,docx,pdf",
+                        "type": "file"
+                    },
+                    {
+                        "name": "income_id[1]",
+                        "in": "query",
+                        "description": "second income object id for update",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "income_type[1]",
+                        "in": "query",
+                        "description": "second income object income_type in:1,2 q for main income 2 for other",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "income_amount[1]",
+                        "in": "query",
+                        "description": "second income object income amount",
+                        "type": "number"
+                    },
+                    {
+                        "name": "income_proof_image[1]",
+                        "in": "formData",
+                        "description": "second income object proof file png,gif,jpg,jpeg,doc,docx,pdf",
+                        "type": "file"
+                    },
+                    {
+                        "name": "expense_id[0]",
+                        "in": "query",
+                        "description": "expence id for update",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "expense_type[0]",
+                        "in": "query",
+                        "description": "expence type selection",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "other_amount[0]",
+                        "in": "query",
+                        "description": "expence amount",
+                        "type": "number"
+                    },
+                    {
+                        "name": "signature",
+                        "in": "formData",
+                        "description": "signature file png,gif,jpg,jpeg",
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"country\": \"User country object.\",\"reasons\": \"Loans reasons objects.\",\"other_loan_types\": \"Existing loan types objects.\",\"types\": \"Loan types objects.\",\"loan_application\":\"loan application related object\",\"message\":\"\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "loans"
+                ],
+                "summary": "Loans delete api only if loan is in status requested, approved, rejected, onhold",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "parameter": "id_in_path",
+                        "name": "loan_application_id",
+                        "in": "path",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\":\"Loan Application successfully deleted.\"}}}"
+                    },
+                    "401": {
+                        "description": "{\"data\":{{\"message\":\"Loan Application not found.\"}}},{\"data\":{{\"message\":\"Something went wrong.\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/login": {
+            "post": {
+                "tags": [
+                    "login"
+                ],
+                "summary": "Login Api for clients",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "client email",
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "client password",
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "device_id",
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_type",
+                        "in": "query",
+                        "description": "device_type in 'android','ios'",
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_token",
+                        "in": "query",
+                        "description": "device firebas token",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"token\": \"token\",\"user\":\"User info object\",\"terms\":\"Terms Date\",\"message\":\"\"}}}"
+                    },
+                    "401": {
+                        "description": "{\"data\":{{\"message\": \"invalid_credentials\"}}},{\"data\":{{ \"message\": \"could_not_create_token\"}}}"
+                    },
+                    "422": {
+                        "description": "{\"data\":{{\"message\":\"validation errors occurred.\", \"errors\": { \"email\": [ \"The email field is required.\" ], \"password\": [ \"The password field is required.\" ] } }}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/forgot-password": {
+            "post": {
+                "tags": [
+                    "login"
+                ],
+                "summary": "forgot password api for sending forgot password email",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "client email",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\": \"Password reset link is sent to your inbox please check it.\"}}}"
+                    },
+                    "401": {
+                        "description": "{\"message\": \"User not found.\",\"status\": false}"
+                    },
+                    "422": {
+                        "description": "{\"message\":\"validation errors occurred.\", \"errors\": { \"email\": [ \"The email field is required.\" ]} }"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/logout": {
+            "delete": {
+                "tags": [
+                    "login"
+                ],
+                "summary": "client logout api which whip out device login related data",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\": \"Account has been successfully logout.\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/device-token": {
+            "post": {
+                "tags": [
+                    "login"
+                ],
+                "summary": "device firbase token change",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "query",
+                        "description": "device_id",
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_type",
+                        "in": "query",
+                        "description": "device_type in 'android','ios'",
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_token",
+                        "in": "query",
+                        "description": "device firebas token",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\": \"Your device token has been saved.\"}}}"
+                    },
+                    "401": {
+                        "description": "{\"message\": \"User not found.\",\"status\": false}"
+                    },
+                    "422": {
+                        "description": "{\"message\":\"validation errors occurred.\", \"errors\": { \"email\": [ \"The email field is required.\" ]} }"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/messages": {
+            "get": {
+                "tags": [
+                    "messages"
+                ],
+                "summary": "Notifications listing",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page id to pass",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"notifications\": \"notifications objects.\",\"message\":\"\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/referrals": {
+            "get": {
+                "tags": [
+                    "referrals"
+                ],
+                "summary": "Referrals statistics api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page id to pass",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"credits\": \"credits objects.\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/referral-histories": {
+            "get": {
+                "tags": [
+                    "referrals"
+                ],
+                "summary": "Referrals History api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Language",
+                        "in": "header",
+                        "description": "values will be en,es,nl",
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page id to pass",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"credits\": \"credits objects.\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/user-info": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "user information api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"user\": \"User information object.\",\"language\":\"[language array]\",\"message\":\"\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/accept-terms": {
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "accept terms",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\": \"You have accepted terms.\"}}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/change-password": {
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "change password api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "password",
+                        "type": "string"
+                    },
+                    {
+                        "name": "password_confirmation",
+                        "in": "query",
+                        "description": "confirm password",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\": \"Your password changed successfully.\"}}}"
+                    },
+                    "422": {
+                        "description": "{\"data\":{{\"message\":\"validation errors occurred.\", \"errors\": { \"password\": [ \"The password field is required.\" ] } }}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/client/update-profile": {
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "update profile api",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer (token here)",
+                        "type": "string"
+                    },
+                    {
+                        "name": "firstname",
+                        "in": "query",
+                        "description": "First name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "query",
+                        "description": "Last Name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Email",
+                        "type": "string"
+                    },
+                    {
+                        "name": "language",
+                        "in": "query",
+                        "description": "Language items=\"eng,esp,pap\"",
+                        "type": "string"
+                    },
+                    {
+                        "name": "gender",
+                        "in": "query",
+                        "description": "Gender 1=>male,2=>female",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "profile_pic",
+                        "in": "formData",
+                        "description": "Profile pic",
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{{\"message\": \"Your profile updates successfully.\",\"user\":\"User Information object.\"}}}"
+                    },
+                    "422": {
+                        "description": "{\"data\":{{\"message\":\"validation errors occurred.\", \"errors\": { \"firstname\": [ \"The firstname field is required.\" ] } }}}"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "description": "Class ApiController",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "description": "Class ApiController",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "login",
+            "description": "Login related apis"
+        },
+        {
+            "name": "users",
+            "description": "Users related apis"
+        },
+        {
+            "name": "loans",
+            "description": "Loans related apis"
+        },
+        {
+            "name": "credits",
+            "description": "credits related apis"
+        },
+        {
+            "name": "messages",
+            "description": "notifications related apis"
+        },
+        {
+            "name": "referrals",
+            "description": "referrals related apis"
+        }
+    ]
+}

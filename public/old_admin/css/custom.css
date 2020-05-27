@@ -1,0 +1,225 @@
+.user-profile-icon {
+    top: 15px;
+    position: relative;
+}
+.notification-list .user-profile-link {
+    height: 70px;
+}
+.login-box,
+.register-box {
+    margin: 10% auto;
+}
+.loan-actions .btn {
+    margin: 7px 7px 0 0;
+}
+.thumb-long {
+    height: 290px;
+    width: 300px;
+    white-space: nowrap;
+    text-align: center;
+    margin: 1em 0;
+}
+.thumb-small {
+    height: 150px;
+    width: 190px;
+    white-space: nowrap;
+    text-align: center;
+    margin: 1em 0;
+}
+.loan-image .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.loan-image.thumb-long img {
+    height: 250px;
+    width: 275px;
+}
+.loan-image .delete-btn {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.loan-image.thumb-small img {
+    height: 140px;
+    width: 175px;
+}
+.loan-image.thumb-medium img {
+    height: 120px;
+    width: 140px;
+}
+.loan-image img {
+    vertical-align: middle;
+    max-height: 300px;
+    max-width: 270px;
+}
+.loan-image {
+    padding: 5px;
+    border-radius: .25rem;
+    border: 1px solid #ddd;
+    margin: 0 10px 55px 0px;
+    float: left;
+}
+/* Modals */
+
+.modal .modal-dialog .modal-content {
+    -moz-box-shadow: none;
+    border-color: transparent;
+    border-radius: 2px;
+    padding: 25px;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.modal .modal-dialog .modal-content .modal-header {
+    border-bottom-width: 2px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+}
+.modal .modal-dialog .modal-content .modal-body {
+    padding: 20px 0;
+}
+.modal .modal-dialog .modal-content .modal-footer {
+    padding: 0;
+    padding-top: 15px;
+}
+.modal-full {
+    width: 98%;
+    max-width: 100%;
+}
+.modal-content .nav.nav-tabs + .tab-content {
+    margin-bottom: 0;
+}
+/* Custom-modal */
+
+.modal-demo {
+    background-color: #ffffff;
+    width: 600px;
+    border-radius: 2px;
+    display: none;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.modal-demo .close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #eeeeee;
+}
+.custom-modal-title {
+    padding: 15px 25px 15px 25px;
+    line-height: 22px;
+    font-size: 18px;
+    background-color: #36404a;
+    color: #ffffff;
+    text-align: left;
+    margin: 0;
+}
+.custom-modal-text {
+    padding: 20px;
+}
+.custombox-modal-flash .close,
+.custombox-modal-rotatedown .close {
+    top: 20px;
+    z-index: 9999;
+}
+.m-t-30 {
+    margin-top: 30px;
+}
+fieldset{
+  border: 1px solid #c5c6c7 !important;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
+}
+fieldset .fieldset-title{
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  width:auto;
+  padding:0 10px;
+  border-bottom:none;
+}
+.amount-holder .column{
+    /*padding-left: 5px;
+    padding-right: 5px;*/
+}
+.amount-holder .loan-image{
+    margin: 0 10px 10px 0px !important;
+}
+.column.actions{
+    margin-top: 35px;
+    padding: 0px;
+}
+.column.actions .btn{
+    float: left;
+    /*font-size: 11px;*/
+    margin: 0 7px 0px 0px;
+    /*padding: 5px 6px 4px 6px;*/
+}
+
+/*
+|------------------------------------------------------------
+| LOADER
+|------------------------------------------------------------
+*/
+.ss_full_loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+.ss_full_loader .ssfl_circle {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border-top: 5px solid #000000;
+  border-right: 5px solid rgba(0, 0, 0, 0.8);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+  border-left: 5px solid rgba(0, 0, 0, 0.3);
+  animation: ssl_animate;
+  animation-duration: .7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.ss_full_loader .ssfl_text {
+  position: absolute;
+  height: 50px;
+  line-height: 50px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  color: #fff;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+.ss_full_loader.open {
+  display: block;
+}
+@keyframes ssl_animate {
+  0% {
+    -moz-transform: rotateZ(0deg) scale(1);
+    -webkit-transform: rotateZ(0deg) scale(1);
+    transform: rotateZ(0deg) scale(1);
+  }
+  50% {
+    -moz-transform: rotateZ(180deg) scale(1.2);
+    -webkit-transform: rotateZ(180deg) scale(1.2);
+    transform: rotateZ(180deg) scale(1.2);
+  }
+  100% {
+    -moz-transform: rotateZ(360deg) scale(1);
+    -webkit-transform: rotateZ(360deg) scale(1);
+    transform: rotateZ(360deg) scale(1);
+  }
+}
